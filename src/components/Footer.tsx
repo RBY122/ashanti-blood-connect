@@ -67,7 +67,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-life-green flex-shrink-0" />
-                <span className="text-muted-foreground">+233 32 123 4567</span>
+                <span className="text-muted-foreground">+233 59 683 3199</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-medical-blue flex-shrink-0" />
@@ -79,7 +79,7 @@ const Footer = () => {
               <h5 className="font-medium text-foreground mb-2">Emergency Hotline</h5>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-emergency" />
-                <span className="font-bold text-emergency">+233 32 URGENT (874368)</span>
+                <span className="font-bold text-emergency">+233 32 URGENT (00000)</span>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © 2024 Blood Bridge Ghana. All rights reserved. Powered by love for life.
+            © 2025 Blood Bridge Ghana. All rights reserved. Powered by Richard Technologies.
           </div>
           <div className="text-sm text-muted-foreground">
             Licensed by Ghana Health Service | Regulated Medical Platform
