@@ -14,7 +14,170 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      donations: {
+        Row: {
+          blood_type: string
+          created_at: string
+          donation_center: string | null
+          donation_date: string
+          donor_id: string
+          id: string
+          notes: string | null
+          units_donated: number | null
+        }
+        Insert: {
+          blood_type: string
+          created_at?: string
+          donation_center?: string | null
+          donation_date?: string
+          donor_id: string
+          id?: string
+          notes?: string | null
+          units_donated?: number | null
+        }
+        Update: {
+          blood_type?: string
+          created_at?: string
+          donation_center?: string | null
+          donation_date?: string
+          donor_id?: string
+          id?: string
+          notes?: string | null
+          units_donated?: number | null
+        }
+        Relationships: []
+      }
+      emergency_requests: {
+        Row: {
+          blood_type: string
+          contact_phone: string | null
+          created_at: string
+          created_by: string | null
+          description: string | null
+          distance: number | null
+          expires_at: string
+          hospital_name: string
+          id: string
+          location: string | null
+          status: string | null
+          units_needed: number
+          urgency: string
+        }
+        Insert: {
+          blood_type: string
+          contact_phone?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          distance?: number | null
+          expires_at?: string
+          hospital_name: string
+          id?: string
+          location?: string | null
+          status?: string | null
+          units_needed: number
+          urgency: string
+        }
+        Update: {
+          blood_type?: string
+          contact_phone?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          distance?: number | null
+          expires_at?: string
+          hospital_name?: string
+          id?: string
+          location?: string | null
+          status?: string | null
+          units_needed?: number
+          urgency?: string
+        }
+        Relationships: []
+      }
+      emergency_responses: {
+        Row: {
+          created_at: string
+          donor_id: string
+          estimated_arrival: string | null
+          id: string
+          message: string | null
+          request_id: string
+          status: string | null
+        }
+        Insert: {
+          created_at?: string
+          donor_id: string
+          estimated_arrival?: string | null
+          id?: string
+          message?: string | null
+          request_id: string
+          status?: string | null
+        }
+        Update: {
+          created_at?: string
+          donor_id?: string
+          estimated_arrival?: string | null
+          id?: string
+          message?: string | null
+          request_id?: string
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "emergency_responses_request_id_fkey"
+            columns: ["request_id"]
+            isOneToOne: false
+            referencedRelation: "emergency_requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          blood_type: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          is_donor: boolean | null
+          is_eligible: boolean | null
+          last_donation_date: string | null
+          location: string | null
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          blood_type?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          is_donor?: boolean | null
+          is_eligible?: boolean | null
+          last_donation_date?: string | null
+          location?: string | null
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          blood_type?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          is_donor?: boolean | null
+          is_eligible?: boolean | null
+          last_donation_date?: string | null
+          location?: string | null
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
