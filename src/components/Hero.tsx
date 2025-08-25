@@ -4,7 +4,7 @@ import heroImage from '@/assets/hero-blood-donation.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-background to-muted overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-background to-muted overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 opacity-20">
         <img 
@@ -40,11 +40,25 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="text-lg px-8 py-4"
+                onClick={() => {
+                  document.getElementById('emergency')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 <Heart className="w-5 h-5" fill="currentColor" />
                 Start Donating
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-lg px-8 py-4"
+                onClick={() => {
+                  document.getElementById('emergency')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Find Blood
               </Button>
             </div>
@@ -84,7 +98,13 @@ const Hero = () => {
                   <MapPin className="w-4 h-4" />
                   <span>3.2 km away</span>
                 </div>
-                <Button variant="emergency" size="sm">
+                <Button 
+                  variant="emergency" 
+                  size="sm"
+                  onClick={() => {
+                    alert('Emergency response functionality will be available once Supabase is connected for real-time features.');
+                  }}
+                >
                   Respond Now
                 </Button>
               </div>
@@ -97,15 +117,33 @@ const Hero = () => {
                 Quick Actions
               </h3>
               <div className="space-y-3">
-                <Button variant="outline" className="w-full justify-start">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start"
+                  onClick={() => {
+                    alert('Scheduling functionality will be available once Supabase is connected for appointment management.');
+                  }}
+                >
                   <Heart className="w-4 h-4 mr-2" />
                   Schedule Donation
                 </Button>
-                <Button variant="outline" className="w-full justify-start">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start"
+                  onClick={() => {
+                    document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   <MapPin className="w-4 h-4 mr-2" />
                   Find Blood Banks
                 </Button>
-                <Button variant="outline" className="w-full justify-start">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start"
+                  onClick={() => {
+                    alert('Community features will be available once Supabase is connected for user management and forums.');
+                  }}
+                >
                   <Users className="w-4 h-4 mr-2" />
                   Join Community
                 </Button>

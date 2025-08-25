@@ -23,19 +23,55 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#home" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Home
             </a>
-            <a href="#donate" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#donate" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Donate
             </a>
-            <a href="#emergency" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#emergency" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('emergency')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Emergency
             </a>
-            <a href="#education" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#education" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Learn
             </a>
-            <a href="#forum" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#forum" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                // For now scroll to education since forum doesn't exist yet
+                document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Forum
             </a>
           </nav>
@@ -46,11 +82,22 @@ const Header = () => {
               <Bell className="w-5 h-5" />
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-emergency rounded-full"></span>
             </Button>
-            <Button variant="outline">
+            <Button 
+              variant="outline"
+              onClick={() => {
+                // TODO: Implement sign in functionality
+                alert('Sign In functionality will be available once Supabase is connected for authentication.');
+              }}
+            >
               <User className="w-4 h-4" />
               Sign In
             </Button>
-            <Button variant="donate">
+            <Button 
+              variant="donate"
+              onClick={() => {
+                document.getElementById('emergency')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Donate Now
             </Button>
           </div>
@@ -70,27 +117,81 @@ const Header = () => {
           isMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
         )}>
           <nav className="flex flex-col space-y-4 py-4 border-t border-border">
-            <a href="#home" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#home" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMenuOpen(false);
+              }}
+            >
               Home
             </a>
-            <a href="#donate" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#donate" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMenuOpen(false);
+              }}
+            >
               Donate
             </a>
-            <a href="#emergency" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#emergency" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('emergency')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMenuOpen(false);
+              }}
+            >
               Emergency
             </a>
-            <a href="#education" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#education" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMenuOpen(false);
+              }}
+            >
               Learn
             </a>
-            <a href="#forum" className="text-foreground hover:text-blood-red transition-colors">
+            <a 
+              href="#forum" 
+              className="text-foreground hover:text-blood-red transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMenuOpen(false);
+              }}
+            >
               Forum
             </a>
             <div className="flex flex-col space-y-2 pt-4">
-              <Button variant="outline" className="w-full">
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => {
+                  alert('Sign In functionality will be available once Supabase is connected for authentication.');
+                  setIsMenuOpen(false);
+                }}
+              >
                 <User className="w-4 h-4" />
                 Sign In
               </Button>
-              <Button variant="donate" className="w-full">
+              <Button 
+                variant="donate" 
+                className="w-full"
+                onClick={() => {
+                  document.getElementById('emergency')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }}
+              >
                 Donate Now
               </Button>
             </div>

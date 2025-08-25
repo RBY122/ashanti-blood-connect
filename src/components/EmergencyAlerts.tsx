@@ -107,11 +107,20 @@ const EmergencyAlerts = () => {
                 <Button 
                   variant={request.urgency === 'CRITICAL' ? 'emergency' : 'donate'} 
                   className="flex-1"
+                  onClick={() => {
+                    alert(`Emergency response for ${request.hospital} will be available once Supabase is connected for real-time coordination.`);
+                  }}
                 >
                   <Heart className="w-4 h-4" />
                   Respond
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button 
+                  variant="outline" 
+                  size="icon"
+                  onClick={() => {
+                    alert(`Calling ${request.hospital} directly...`);
+                  }}
+                >
                   <Phone className="w-4 h-4" />
                 </Button>
               </div>
